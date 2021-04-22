@@ -1,0 +1,42 @@
+PROCEDURE dot_product(VAR v1,v2:ARRAY_OF FLOAT  ; VAR ps:FLOAT)
+VAR
+        i:INTEGER; 
+        ps : FLOAT; 
+BEGIN
+    IF (v1.length == v2.length) THEN
+         ps := 0.0;
+        FOR i FROM 0 TO v1.length-1 STEP 1  DO
+        ps = ps + v1[i] * v2[i] ;
+        END_FOR
+    ELSE
+    Write(" can't calculate scalar product ");
+       
+    END_IF
+    Write(ps);
+END
+
+ALGORITHM dot_product_algo
+VAR
+    V1 , V2 : ARRAY_OF FLOAT[50];  
+    i,j : INTEGER; 
+BEGIN
+   
+    Write("write victor" )
+    Read(j);
+    Write("V2");
+    Write("V1");
+    IF (j mod 2= 0) THEN
+    Read(V1[i]);
+    Read(V2[i]);
+
+    FOR i FROM 0 TO j-1 STEP 1  DO
+     dot_product( V1 , V2 );
+      IF (dot_product(V1 , V2) == 0) THEN
+     Write(" orthogonal vector");
+      END_IF
+    END_FOR   
+    
+    ELSE write(" error vector")
+    END_IF
+
+END
